@@ -28,6 +28,11 @@ form {
   left:0;
 }
 
-.table{
+.table {
   text-align: left;
+}
+
+#transparent_input {
+  background: transparent;
+  border: 0px;
 }

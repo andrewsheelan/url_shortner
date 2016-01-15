@@ -8,9 +8,8 @@
           %input.btn.btn-info{type: 'submit', value: 'GO!'}
     - if @short_url
       %center
-        Here's your shiny tiny url...
-        %a{href: URI.join(request.url, @short_url.uid)}
-          =URI.join request.url, @short_url.uid
+        Here's your shiny tiny url... copy url:
+        %input#transparent_input{value: URI.join(request.url, @short_url.uid), size: 50, readonly: true, title: 'copy text..'}
 
   - if @short_url
     %table.table
@@ -24,3 +23,14 @@
           %td
             %a{href: URI.join(request.url, url.uid), target: '_blank'}
               =URI.join request.url, url.uid
+
+:javascript
+  window.onload = function(e){
+    inputTransparent = document.getElementById('transparent_input')
+    if(inputTransparent) {
+      inputTransparent.select();
+      inputTransparent.onclick = function(e) {
+        inputTransparent.select();
+      }
+    }
+  }
