@@ -3,10 +3,10 @@
 This is a sinatra app with services to shorten and redirect urls.
 It uses SecureRandom to generate url safe ids for the redirects.
 
-Service       | method  | url                                 | params          | output        |
---------------|---------|-------------------------------------|-----------------|---------------|
-Shortner      | POST    | http://hoshtname/shorten            | long_url, slug  |shortened_slug |
-Redirect url  | GET     | http://hoshtname/shortened_slug     |                 |redirect       |
+Service       | method  | url                                 | params - JSON             | Output - JSON   Content-Type|Sucess Status| Error Status|
+--------------|---------|-------------------------------------|---------------------------|-----------------------------|------|------|
+Shortner      | POST    | http://hoshtname/shorten            | long_url, slug(OPTIONAL)  |long_url, shortened_slug     |201 | 500|
+Redirect url  | GET     | http://hoshtname/shortened_slug     |                           |                             | 302 |404|
 
 
 #### Steps to run the app:
