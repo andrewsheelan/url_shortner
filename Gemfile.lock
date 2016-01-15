@@ -18,6 +18,8 @@ GEM
     builder (3.2.2)
     diff-lcs (1.2.5)
     extlib (0.9.16)
+    faker (1.5.0)
+      i18n (~> 0.5)
     haml (4.0.7)
       tilt
     highline (1.7.8)
@@ -52,6 +54,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  faker
   haml
   pg
   rake

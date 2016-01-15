@@ -8,7 +8,7 @@ class Url < ActiveRecord::Base
 
     uri = URI.parse(long_url)
     if (uri.kind_of?(URI::HTTP) or uri.kind_of?(URI::HTTPS))
-      Url.find_or_create_by(long_url: long_url)
+      Url.find_or_create_by!(long_url: long_url)
     end
   end
 
