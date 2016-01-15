@@ -9,7 +9,7 @@
     - if @short_url
       %center
         Here's your shiny tiny url... copy url:
-        %input#transparent_input{value: URI.join(request.url, @short_url.uid), size: 50, readonly: true, title: 'copy text..'}
+        %input.transparent-input{value: URI.join(request.url, @short_url.uid), size: 50, readonly: true, title: 'copy text..'}
 
   - if @short_url
     %table.table
@@ -26,11 +26,11 @@
 
 :javascript
   window.onload = function(e){
-    inputTransparent = document.getElementById('transparent_input')
-    if(inputTransparent) {
-      inputTransparent.select();
-      inputTransparent.onclick = function(e) {
-        inputTransparent.select();
+    transparentInput = document.getElementsByClassName('transparent-input')
+    if(transparentInput) {
+      transparentInput.select();
+      transparentInput.onclick = function(e) {
+        transparentInput.select();
       }
     }
   }

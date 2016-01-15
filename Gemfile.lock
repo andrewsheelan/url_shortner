@@ -16,7 +16,9 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     builder (3.2.2)
+    daemons (1.2.3)
     diff-lcs (1.2.5)
+    eventmachine (1.0.8)
     extlib (0.9.16)
     faker (1.5.0)
       i18n (~> 0.5)
@@ -45,6 +47,10 @@ GEM
       diff-lcs (>= 1.1.2)
       extlib (>= 0.9.5)
       highline (>= 1.4.0)
+    thin (1.6.3)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0)
+      rack (~> 1.0)
     thread_safe (0.3.5)
     tilt (2.0.2)
     tzinfo (1.2.2)
@@ -62,6 +68,7 @@ DEPENDENCIES
   sinatra
   sinatra-activerecord
   sqlite3
+  thin
 
 BUNDLED WITH
    1.10.6

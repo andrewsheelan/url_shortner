@@ -4,6 +4,7 @@ gem 'sinatra-activerecord'
 gem 'haml'
 gem 'pg', group: :production
 gem 'rake'
+gem 'thin'
 
 group :test, :development do
   gem 'sqlite3'

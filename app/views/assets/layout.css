@@ -8,12 +8,12 @@ body {
   text-align: center;
   font-size: 18px;
 }
-
 form {
   padding: 50px;
 }
 
 .container-flex form {
+  width: 100%;
   border: 1px solid #aaa;
   border-radius: 10px;
 }
@@ -32,7 +32,7 @@ form {
   text-align: left;
 }
 
-#transparent_input {
+.transparent-input {
   background: transparent;
   border: 0px;
 }
