@@ -2,6 +2,12 @@
 %html
   %head
     %title My Page
-  %body
+    %link{ crossorigin: "anonymous", href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", :integrity => "sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", rel: "stylesheet" }
+    %link{ crossorigin: "anonymous", href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css", :integrity => "sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r", rel: "stylesheet" }
+    %link{ href: 'https://fonts.googleapis.com/css?family=Inconsolata', rel: 'stylesheet', type:'text/css' }
+    %link{ href: '/assets/favicon.ico', rel: 'shortcut icon', type: 'image/x-icon' }
+    %link{ href: "/assets/layout.css", rel: "stylesheet" }
+  %body{ background: '/assets/pattern.jpg' }
     #container= yield
-    %footer &copy; 2015 Andrew
+    %footer.navbar.navbar-fixed-bottom
+      &copy; 2016 Andrew Paliyan

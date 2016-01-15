@@ -14,7 +14,12 @@
 ActiveRecord::Schema.define(version: 20160113030905) do
 
   create_table "urls", force: :cascade do |t|
-    t.string "url"
+    t.string   "uid",        null: false
+    t.string   "long_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "urls", ["uid"], name: "index_urls_on_uid", unique: true
 
 end

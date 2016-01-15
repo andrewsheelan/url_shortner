@@ -1,4 +1,26 @@
-%h1
-  - Url.create(url: 'sdf')
-  - Url.all.each do |url|
-    = url.url
+%div{class: "container container-flex#{ @short_url.id if @short_url }"}
+  %form{ action: '/submit_shorten', method: 'post' }
+    %h4.pull-left URL: &nbsp;
+    %div.form-group
+      .input-group
+        %input.form-control{name: 'long_url', onpaste: 'setTimeout(function(){submit()},50)', value: params[:long_url]}
+        .input-group-btn
+          %input.btn.btn-info{type: 'submit', value: 'GO!'}
+    - if @short_url
+      %center
+        Here's your shiny small url...
+        %a{href: URI.join(request.url, @short_url.uid)}
+          =URI.join request.url, @short_url.uid
+
+  - if @short_url
+    %table.table
+      %tr
+        %th{colspan: 2} Recently Shortend URLS:
+      - Url.recent.each do |url|
+        %tr
+          %td
+            %a{href: url.long_url, target: '_blank'}
+              #{url.long_url[0..50]}#{"..." if url.long_url.length > 50}
+          %td
+            %a{href: URI.join(request.url, url.uid), target: '_blank'}
+              =URI.join request.url, url.uid

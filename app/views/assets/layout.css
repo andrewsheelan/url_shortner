@@ -1,0 +1,33 @@
+h4 {
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+body {
+  font-family: 'Inconsolata', ;
+  text-align: center;
+  font-size: 14px;
+}
+
+form {
+  padding: 50px;
+}
+
+.container-flex form {
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}
+
+.container-flex {
+  align-items: center;
+  display: flex;
+  position:absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+}
+
+.table{
+  text-align: left;
+}
