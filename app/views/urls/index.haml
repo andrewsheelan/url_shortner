@@ -8,7 +8,7 @@
           %input.btn.btn-info{type: 'submit', value: 'GO!'}
     - if @short_url
       %center
-        Here's your shiny small url...
+        Here's your shiny tiny url...
         %a{href: URI.join(request.url, @short_url.uid)}
           =URI.join request.url, @short_url.uid
 
