@@ -14,13 +14,13 @@
 ActiveRecord::Schema.define(version: 20160113030905) do
 
   create_table "urls", force: :cascade do |t|
-    t.string   "uid",                        null: false
+    t.string   "slug",                       null: false
     t.string   "long_url"
     t.boolean  "slugged",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "urls", ["uid"], name: "index_urls_on_uid", unique: true
+  add_index "urls", ["slug"], name: "index_urls_on_slug", unique: true
 
 end

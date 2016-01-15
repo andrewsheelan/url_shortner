@@ -1,8 +1,8 @@
 class UrlShortner < Sinatra::Base
   require 'json'
   # API SERVICE
-  get '/:uid' do
-    url   = Url.find_by(uid: params[:uid])
+  get '/:slug' do
+    url   = Url.find_by(slug: params[:slug])
     if url
       redirect url.long_url
     else
@@ -12,18 +12,18 @@ class UrlShortner < Sinatra::Base
   end
 
   post '/shorten' do
-    params = JSON.parse(request.body.read)
-    url = Url.shorten(
-      params['long_url'],
-      slug: params['slug'],
-      host: request.host
-    )
+    begin
+      params = JSON.parse(request.body.read)
+      url = Url.shorten(
+        params['long_url'],
+        user_slug: params['slug'],
+        host: request.host
+      )
 
-    if url
-      URI.join(request.url, url.uid).to_s
-    else
+      URI.join(request.url, url.slug).to_s
+    rescue => e
       status 500
-      body({ error: 'Invaid long url.' }.to_json)
+      body({ error: e.message }.to_json)
     end
   end
 end

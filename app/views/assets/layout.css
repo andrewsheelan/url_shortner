@@ -36,3 +36,23 @@ form {
   background: transparent;
   border: 0px;
 }
+
+/* To remove space between text inputs */
+.input-group-glue {
+  width: 0;
+  display: table-cell;
+}
+
+.input-group-glue + .form-control {
+  border-left: none;
+}
+
+.submit-shorten-form .slug{
+  width: 50%;
+  float: right;
+}
+
+.submit-shorten-form .long_url{
+  width: 150%;
+  z-index: 10;
+}

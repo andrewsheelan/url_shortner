@@ -9,10 +9,15 @@ class UrlShortner < Sinatra::Base
   end
 
   post '/submit_shorten' do
-    @short_url = Url.shorten(
-      params[:long_url],
-      host: request.host
-    )
+    begin
+      @short_url = Url.shorten(
+        params[:long_url],
+        user_slug: params['slug'],
+        host: request.host
+      )
+    rescue => e
+      @error = e.message
+    end
     haml :'urls/index'
   end
 
