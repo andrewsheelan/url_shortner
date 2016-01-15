@@ -33,19 +33,24 @@ bundle exec rspec spec
 ```
 
 #### Using the services:
-####### TO USE THE SHORTEN SERVICE
+###### USAGE: THE SHORTEN SERVICE
 
 ```
-curl --data "long_url=http://google.com" -X POST localhost:3000/shorten
+curl --data '{"long_url":"http://google.com"}' -X POST localhost:3000/shorten
 ```
-output: http://localhost:3000/NawcuuNLnfo
+> output: http://localhost:3000/UlVMnXBde88⏎
 
-####### TO USE THE REDIRECT SERVICE
+```
+curl  -H "Accept: application/json" --data '{"long_url": "http://google.com", "slug":"google"}'  -X POST localhost:3000/shorten
+```
+> output: http://localhost:3000/google
+
+###### USAGE: THE REDIRECT SERVICE
 ```
 curl -X GET -L http://localhost:3000/NawcuuNLnfo
 ```
 
-####### The root path also has a ui interface to allow using the service on the browser.
+###### The root path also has a ui interface to allow using the service on the browser.
 
 > Here's a deployed demo version of the code:
 
