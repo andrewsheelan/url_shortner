@@ -1,7 +1,13 @@
 ## Url Shortner
 
-This is a sinatra app with services to shorten and redirect urls.
-It uses SecureRandom to generate url safe ids for the redirects.
+This is a sinatra app contains services to shorten(with an optional slug) and create redirect urls.
+
+- The provided slug is made url safe and saved for redirects
+- The optional Slugs are unique and does not allow duplicates
+- It uses SecureRandom to generate url safe slugs, if a slug is not provided
+- If an existing url is used and a slug is not provided, it reuses the existing non user slugged record
+
+## The Shortner Services
 
 Service       | method  | url                                 | params - JSON             | Output - JSON   Content-Type|Sucess Status| Error Status|
 --------------|---------|-------------------------------------|---------------------------|-----------------------------|------|------|
@@ -41,7 +47,7 @@ bundle exec rspec spec
 ```
 
 #### Using the services:
-###### USAGE: THE SHORTEN SERVICE
+###### USAGE: The Shortner Service
 
 ```
 curl --data '{"long_url":"http://google.com"}' -X POST localhost:3000/shorten
@@ -53,7 +59,7 @@ curl  -H "Accept: application/json" --data '{"long_url": "http://google.com", "s
 ```
 > output: http://localhost:3000/google
 
-###### USAGE: THE REDIRECT SERVICE
+###### USAGE: The Redirect Service
 ```
 curl -X GET -L http://localhost:3000/NawcuuNLnfo
 ```
@@ -62,4 +68,4 @@ curl -X GET -L http://localhost:3000/NawcuuNLnfo
 
 > Here's a deployed demo version of the code:
 
-[Visit Demo!](https://immense-taiga-2935.herokuapp.com)
+[Visit Demo!](https://urlshortnr.herokuapp.com)
