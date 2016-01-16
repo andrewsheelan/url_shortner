@@ -7,7 +7,7 @@ This is a sinatra app contains services to shorten(with an optional slug) and cr
 - It uses SecureRandom to generate url safe slugs, if a slug is not provided
 - If an existing url is used and a slug is not provided, it reuses the existing non user slugged record
 
-## The Shortner Services
+#### The Shortner Services
 
 Service       | method  | url                                 | params - JSON             | Output - JSON   Content-Type|Sucess Status| Error Status|
 --------------|---------|-------------------------------------|---------------------------|-----------------------------|------|------|
