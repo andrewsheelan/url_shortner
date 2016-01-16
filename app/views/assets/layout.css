@@ -31,7 +31,9 @@ form {
 .table {
   text-align: left;
 }
-
+.output{
+  text-align: left;
+}
 .transparent-input {
   background: transparent;
   border: 0px;

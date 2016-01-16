@@ -15,7 +15,7 @@ class Url < ActiveRecord::Base
     record.merge!(
       slug: URI.escape(user_slug),
       slugged: true
-    ) unless user_slug.nil || user_slug.empty?
+    ) unless user_slug.to_s.empty?
 
     Url.find_or_create_by! record
   end

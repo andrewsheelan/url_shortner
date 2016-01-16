@@ -5,7 +5,6 @@ gem 'haml'
 gem 'pg', group: :production
 gem 'rake'
 gem 'thin'
-gem 'pry'
 group :test, :development do
   gem 'sqlite3'
 end

@@ -26,6 +26,14 @@ bundle exec thin start
 
 > default port - 3000
 
+#### Steps to run the specs:
+
+* Initial setup
+
+```
+bundle exec rake db:migrate RACK_ENV=test
+```
+
 * To run the tests
 
 ```

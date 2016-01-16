@@ -9,11 +9,11 @@
         .input-group-btn
           %input.btn.btn-info{type: 'submit', value: 'GO!'}
     - if @short_url
-      %center
-        Here's your shiny tiny url... copy url:
+      %div.output
+        Here's your shiny tiny url:
         %input.transparent-input{value: URI.join(request.url, @short_url.slug), size: 50, readonly: true, title: 'copy text..'}
     - if @error
-      %center.text-danger=@error
+      %div.output.text-danger=@error
 
 .container
   - if @short_url || @error

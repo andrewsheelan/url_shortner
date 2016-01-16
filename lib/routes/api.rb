@@ -19,7 +19,7 @@ class UrlShortner < Sinatra::Base
         user_slug: params['slug'],
         host: request.host
       )
-
+      status 201
       URI.join(request.url, url.slug).to_s
     rescue => e
       status 500
