@@ -13,3 +13,5 @@ group :test do
   gem 'rspec-sinatra'
   gem 'faker'
 end
+
+ruby '3.0.0'
