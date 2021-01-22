@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Url < ActiveRecord::Base
   validates_presence_of :long_url
   validates_uniqueness_of :slug
@@ -12,15 +14,16 @@ class Url < ActiveRecord::Base
 
     record = { long_url: long_url, slugged: false }
     # update the slug and slugged attributes if slug is present
-    record.merge!(
-      slug: URI.escape(user_slug),
-      slugged: true
-    ) unless user_slug.to_s.empty?
+    unless user_slug.to_s.empty?
+      record.merge!(
+        slug: CGI.escape(user_slug),
+        slugged: true
+      )
+    end
 
     Url.find_or_create_by! record
   end
 
-  private
   def self.invalid_input?(long_url, host)
     long_url.nil? || (host && long_url.include?(host))
   end
@@ -30,8 +33,11 @@ class Url < ActiveRecord::Base
     ![URI::HTTP, URI::HTTPS].include? parsed_uri.class
   end
 
+  private
+
   def generate_slug
-    return unless self.slug.nil?
+    return unless slug.nil?
+
     begin
       slug = SecureRandom.urlsafe_base64(8)
     end while Url.where(slug: slug).exists?
