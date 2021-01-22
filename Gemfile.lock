@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/sinatra-activerecord/sinatra-activerecord.git
+  revision: 5312c5f1f00b2e2a958b2045a5134385a5487507
+  specs:
+    sinatra-activerecord (2.0.22)
+      activerecord (>= 4.1)
+      sinatra (>= 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -42,9 +50,6 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
-    sinatra-activerecord (2.0.22)
-      activerecord (>= 4.1)
-      sinatra (>= 1.0)
     sqlite3 (1.4.2)
     templater (1.0.0)
       diff-lcs (>= 1.1.2)
@@ -67,7 +72,7 @@ DEPENDENCIES
   rake
   rspec-sinatra
   sinatra
-  sinatra-activerecord
+  sinatra-activerecord!
   sqlite3
 
 RUBY VERSION

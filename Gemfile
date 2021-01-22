@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'sinatra'
-gem 'sinatra-activerecord'
+gem 'sinatra-activerecord', github: 'sinatra-activerecord/sinatra-activerecord'
 
 gem 'haml'
 gem 'pg', group: :production
