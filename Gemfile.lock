@@ -1,25 +1,17 @@
-GIT
-  remote: https://github.com/sinatra-activerecord/sinatra-activerecord.git
-  revision: 5312c5f1f00b2e2a958b2045a5134385a5487507
-  specs:
-    sinatra-activerecord (2.0.22)
-      activerecord (>= 4.1)
-      sinatra (>= 1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (6.1.1)
-      activesupport (= 6.1.1)
-    activerecord (6.1.1)
-      activemodel (= 6.1.1)
-      activesupport (= 6.1.1)
-    activesupport (6.1.1)
+    activemodel (6.0.3.4)
+      activesupport (= 6.0.3.4)
+    activerecord (6.0.3.4)
+      activemodel (= 6.0.3.4)
+      activesupport (= 6.0.3.4)
+    activesupport (6.0.3.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 1.6, < 2)
-      minitest (>= 5.1)
-      tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+      zeitwerk (~> 2.2, >= 2.2.2)
     concurrent-ruby (1.1.8)
     diff-lcs (1.4.4)
     extlib (0.9.16)
@@ -50,21 +42,26 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
+    sinatra-activerecord (2.0.22)
+      activerecord (>= 4.1)
+      sinatra (>= 1.0)
     sqlite3 (1.4.2)
     templater (1.0.0)
       diff-lcs (>= 1.1.2)
       extlib (>= 0.9.5)
       highline (>= 1.4.0)
     temple (0.8.2)
+    thread_safe (0.3.6)
     tilt (2.0.10)
-    tzinfo (2.0.4)
-      concurrent-ruby (~> 1.0)
+    tzinfo (1.2.9)
+      thread_safe (~> 0.1)
     zeitwerk (2.4.2)
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord (= 6.0.3.4)
   faker
   haml
   pg
@@ -72,7 +69,7 @@ DEPENDENCIES
   rake
   rspec-sinatra
   sinatra
-  sinatra-activerecord!
+  sinatra-activerecord
   sqlite3
 
 RUBY VERSION
