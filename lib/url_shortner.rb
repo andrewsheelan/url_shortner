@@ -3,6 +3,7 @@ require 'sinatra/activerecord'
 require 'tilt/haml'
 
 class UrlShortner < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
   ROOT_DIR = File.expand_path("..", File.dirname(__FILE__))
   set :root, ROOT_DIR
 
