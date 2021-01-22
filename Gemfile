@@ -6,6 +6,8 @@ gem 'haml'
 gem 'pg', group: :production
 gem 'rake'
 gem 'puma'
+gem 'puma-metrics'
+
 group :test, :development do
   gem 'sqlite3'
 end
