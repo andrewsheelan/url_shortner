@@ -9,7 +9,4 @@
     %link{ href: "/assets/layout.css", rel: "stylesheet" }
   %body{ background: '/assets/pattern.jpg' }
     #container= yield
-    %footer.navbar.navbar-fixed-bottom
-      span &copy;
-      span= Date.today.year
-      span Andrew Paliyan
+    %footer.navbar.navbar-fixed-bottom= "&copy; #{Date.today.year} Andrew Paliyan"
