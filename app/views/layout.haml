@@ -10,4 +10,6 @@
   %body{ background: '/assets/pattern.jpg' }
     #container= yield
     %footer.navbar.navbar-fixed-bottom
-      &copy; 2016 Andrew Paliyan
+      span &copy;
+      span= Date.today.year
+      span Andrew Paliyan
