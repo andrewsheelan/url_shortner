@@ -1,5 +1,9 @@
 ## Url Shortner
 
+> Here's a deployed demo version of the code:
+
+[Visit Demo!](https://shnr.herokuapp.com/)
+
 This is a sinatra app contains services to shorten(with an optional slug) and create redirect urls.
 
 - The provided slug is made url safe and saved for redirects
@@ -65,7 +69,3 @@ curl -X GET -L http://localhost:3000/NawcuuNLnfo
 ```
 
 ###### The root path also has a ui interface to allow using the service on the browser.
-
-> Here's a deployed demo version of the code:
-
-[Visit Demo!](https://urlshortnr.herokuapp.com)
