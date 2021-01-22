@@ -60,7 +60,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activerecord
   faker
   haml
   pg
